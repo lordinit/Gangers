@@ -9,12 +9,17 @@ import com.example.gangchat.databinding.ActivityMainBinding
 import com.example.gangchat.ui.fragments.ChatsFragment
 
 import com.example.gangchat.ui.objects.AppDrawer
+import com.example.gangchat.utilits.AUTH
+import com.example.gangchat.utilits.replaceActivity
+import com.example.gangchat.utilits.replaceFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
     private lateinit var mAppDrawer: AppDrawer
     private lateinit var mToolbar: Toolbar
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,17 +34,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (false) {
+        if (AUTH.currentUser!=null) {
             setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            supportFragmentManager.beginTransaction()
-                .replace(
-                    R.id.dataContainer,
-                    ChatsFragment()
-                ).commit()
+            replaceFragment(ChatsFragment(),addStack = false)
+
         } else {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
     }
 
@@ -47,5 +48,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this,mToolbar)
+        AUTH = FirebaseAuth.getInstance()
     }
 }

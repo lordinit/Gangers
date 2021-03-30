@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "442653022719",
+    "project_id": "gangchat-e6bac",
+    "storage_bucket": "gangchat-e6bac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442653022719:android:83a1f9726a2a51cdfe6fca",
+        "android_client_info": {
+          "package_name": "com.example.gangchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442653022719-8uiv2qhltanqivsbnf6ugg8taiq4brb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD9RUUuyXanmF2_KsSMffaZsI20parhtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442653022719-8uiv2qhltanqivsbnf6ugg8taiq4brb8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

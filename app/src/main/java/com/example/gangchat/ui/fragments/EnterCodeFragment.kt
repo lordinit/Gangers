@@ -1,46 +1,45 @@
 package com.example.gangchat.ui.fragments
 
-import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.net.wifi.hotspot2.pps.Credential
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
+import com.example.gangchat.MainActivity
 import com.example.gangchat.R
+import com.example.gangchat.activites.RegisterActivity
+import com.example.gangchat.utilits.AUTH
+import com.example.gangchat.utilits.AppTextWatcher
+import com.example.gangchat.utilits.replaceActivity
+import com.example.gangchat.utilits.showToast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthProvider
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
 
-class EnterCodeFragment : Fragment(R.layout.fragment_enter_code)
+class EnterCodeFragment(val PhoneNumber: String,val id: String)
+    : Fragment(R.layout.fragment_enter_code)
 {
+
+
     override fun onStart()
     {
         super.onStart()
-        register_input_code.addTextChangedListener(object :TextWatcher
-        {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int)
-            {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int)
-            {
-
-            }
-
-            override fun afterTextChanged(s: Editable?)
-            {
+        (activity as RegisterActivity).title = PhoneNumber
+        register_input_code.addTextChangedListener(AppTextWatcher {
                 val string:String = register_input_code.text.toString()
                 if (string.length==6)
                 {
-                    verifieCode()
+                    enterCode()
                 }
-            }
         })
     }
-    fun verifieCode(){
-        Toast.makeText(activity,"Ok",Toast.LENGTH_SHORT).show()
-
+    private fun enterCode(){
+        val code = register_input_code.text.toString()
+       val credential = PhoneAuthProvider.getCredential(id,code)
+        AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                showToast("Добро пожаловать")
+                (activity as RegisterActivity).replaceActivity(MainActivity())
+            } else showToast(task.exception?.message.toString())
+        }
     }
 }
