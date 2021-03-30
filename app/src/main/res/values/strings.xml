@@ -14,4 +14,10 @@
     <string name="setting_lable_bio">Напишите немного о себе</string>
     <string name="setting_menu_change_name">изменить имя</string>
     <string name="settings_menu_exit">выход</string>
+    <string name="cd_register_image">register_image</string>
+    <string name="register_text_enter_code">Введите Код</string>
+    <string name="register_text_we_sent">Мы отправили SMS с кодом проверки на ваш телефон</string>
+    <string name="register_hint_default_code">- - - - - -</string>
+    <string name="register_title_your_phone">Ваш Телефон</string>
+    <string name="register_toast_enter_phone">введите телефон</string>
 </resources>

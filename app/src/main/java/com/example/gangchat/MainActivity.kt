@@ -1,8 +1,10 @@
 package com.example.gangchat
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import com.example.gangchat.activites.RegisterActivity
 import com.example.gangchat.databinding.ActivityMainBinding
 import com.example.gangchat.ui.fragments.ChatsFragment
 
@@ -11,7 +13,7 @@ import com.example.gangchat.ui.objects.AppDrawer
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
-    private lateinit var mAppDrawer:AppDrawer
+    private lateinit var mAppDrawer: AppDrawer
     private lateinit var mToolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,11 +29,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-      setSupportActionBar(mToolbar)
-        mAppDrawer.create()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.dataContainer,ChatsFragment()).commit()
+        if (false) {
+            setSupportActionBar(mToolbar)
+            mAppDrawer.create()
+            supportFragmentManager.beginTransaction()
+                .replace(
+                    R.id.dataContainer,
+                    ChatsFragment()
+                ).commit()
+        } else {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
