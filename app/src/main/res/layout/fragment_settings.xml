@@ -26,11 +26,11 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="@dimen/horizontal_margin" />
         <TextView
-            android:id="@+id/settings_FullName"
+            android:id="@+id/settings_full_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/colorAccent"
-            android:text="Kirill Spasov"
+            tools:text="Kirill Spasov"
             android:textSize="@dimen/normalText"
             android:layout_marginStart="@dimen/horizontal_margin"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,14 +41,15 @@
         </TextView>
 
         <TextView
+            android:id="@+id/settings_status"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/colorAccentDark"
-            android:text="в сети"
+            tools:text="в сети"
             android:textSize="@dimen/smallText"
             android:layout_marginStart="@dimen/vertical_large_margin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings_FullName"
+            app:layout_constraintTop_toBottomOf="@+id/settings_full_name"
             app:layout_constraintStart_toEndOf="@+id/settings_user_photo">
 
         </TextView>
@@ -76,14 +77,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/setting_Buttons">
         <TextView
-            android:id="@+id/setting_phone_number"
+            android:id="@+id/settings_phone_number"
             app:layout_constraintTop_toTopOf="@id/setting_btn_change_number_phone"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="@string/setting_default_number"
+            tools:text="@string/setting_default_number"
             style="@style/normalText" />
         <TextView
             android:id="@+id/setting_lable_phone_number"
-            app:layout_constraintTop_toBottomOf="@+id/setting_phone_number"
+            app:layout_constraintTop_toBottomOf="@+id/settings_phone_number"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/setting_lable_phone_number"
             style="@style/smallText" />
@@ -102,14 +103,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/setting_Buttons">
         <TextView
-            android:id="@+id/setting_login"
+            android:id="@+id/settings_user_name"
             app:layout_constraintTop_toTopOf="@id/setting_btn_change_user_name"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="@string/settings_default_login"
+            tools:text="@string/settings_default_login"
             style="@style/normalText" />
         <TextView
             android:id="@+id/setting_lable_user_name"
-            app:layout_constraintTop_toBottomOf="@+id/setting_login"
+            app:layout_constraintTop_toBottomOf="@+id/settings_user_name"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/setting_lable_login"
             style="@style/smallText" />
@@ -128,14 +129,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/setting_Buttons">
         <TextView
-            android:id="@+id/setting_bio"
+            android:id="@+id/settings_bio"
             app:layout_constraintTop_toTopOf="@id/setting_btn_change_bio"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/settings_default_bio"
             style="@style/normalText" />
         <TextView
             android:id="@+id/setting_lable_bio"
-            app:layout_constraintTop_toBottomOf="@+id/setting_bio"
+            app:layout_constraintTop_toBottomOf="@+id/settings_bio"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/setting_lable_bio"
             style="@style/smallText" />
