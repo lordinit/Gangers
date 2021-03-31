@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gangchat.R
 import com.example.gangchat.models.CommonModel
+import com.example.gangchat.ui.fragments.single_chat.SingleChatFragment
 import com.example.gangchat.utilits.*
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
@@ -53,10 +54,14 @@ class ContactsFragment : BaseFragment(R.layout.fragment_contacts) {
 
                 mRefUsersListener = AppValueEventListener {
                     val contact = it.getCommonModel()
-                    holder.name.text = contact.fullname
+
+                    if (contact.fullname.isEmpty()){
+                        holder.name.text = model.fullname
+                    }else holder.name.text = contact.fullname
+
                     holder.status.text = contact.state
                     holder.photo.downloadAndSetImage(contact.photoUrl)
-                    holder.itemView.setOnClickListener { replaceFragment(SingleChatFragment(contact))}
+                    holder.itemView.setOnClickListener { replaceFragment(SingleChatFragment(model))}
 
                 }
 

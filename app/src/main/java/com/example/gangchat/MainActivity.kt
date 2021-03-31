@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import com.example.gangchat.activites.RegisterActivity
 import com.example.gangchat.databinding.ActivityMainBinding
 import com.example.gangchat.ui.fragments.ChatsFragment
-
 import com.example.gangchat.ui.objects.AppDrawer
 import com.example.gangchat.utilits.*
 import kotlinx.coroutines.CoroutineScope
