@@ -5,6 +5,8 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import com.example.gangchat.MainActivity
 import com.example.gangchat.R
+import com.example.gangchat.utilits.APP_ACTIVITY
+import com.example.gangchat.utilits.hideKeyboard
 
 
 open class BaseChangeFragment (layout:Int): Fragment(layout) {
@@ -14,6 +16,7 @@ open class BaseChangeFragment (layout:Int): Fragment(layout) {
         super.onStart()
         setHasOptionsMenu(true)
         (activity as MainActivity).mAppDrawer.disableDrawer()
+        hideKeyboard()
     }
 
     override fun onStop() {
