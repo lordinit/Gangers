@@ -10,6 +10,7 @@ import com.example.gangchat.ui.fragments.ChatsFragment
 
 import com.example.gangchat.ui.objects.AppDrawer
 import com.example.gangchat.utilits.AUTH
+import com.example.gangchat.utilits.initFirebase
 import com.example.gangchat.utilits.replaceActivity
 import com.example.gangchat.utilits.replaceFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -17,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityMainBinding
-    private lateinit var mAppDrawer: AppDrawer
+     lateinit var mAppDrawer: AppDrawer
     private lateinit var mToolbar: Toolbar
 
 
@@ -48,6 +49,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this,mToolbar)
-        AUTH = FirebaseAuth.getInstance()
+        initFirebase()
     }
 }

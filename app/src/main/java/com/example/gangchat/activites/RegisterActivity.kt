@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import com.example.gangchat.R
 import com.example.gangchat.databinding.ActivityRegisterBinding
 import com.example.gangchat.ui.fragments.EnterPhoneNumberFragment
+import com.example.gangchat.utilits.initFirebase
 import com.example.gangchat.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+        initFirebase()
     }
 
     override fun onStart() {
