@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/horizontal_margin" />
+            android:layout_marginStart="@dimen/app_margin" />
         <TextView
             android:id="@+id/settings_full_name"
             android:layout_width="0dp"
@@ -32,9 +32,9 @@
             android:textColor="@color/colorAccent"
             tools:text="Kirill Spasov"
             android:textSize="@dimen/normalText"
-            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginStart="@dimen/app_margin"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/vertical_margin"
+            android:layout_marginTop="@dimen/app_small_margin"
             app:layout_constraintTop_toTopOf="@id/settings_user_photo"
             app:layout_constraintStart_toEndOf="@+id/settings_user_photo">
 
@@ -68,7 +68,7 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/setting_header_bloc"
         android:layout_marginTop="@dimen/vertical_large_margin"
-        android:layout_marginStart="@dimen/horizontal_margin"/>
+        android:layout_marginStart="@dimen/app_margin"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/setting_btn_change_number_phone"
@@ -153,7 +153,7 @@
         android:layout_width="@dimen/settings_btn_change_photo_width"
         android:layout_height="@dimen/settings_btn_change_photo_height"
         android:src="@drawable/ic_camera"
-        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:layout_marginEnd="@dimen/app_margin"
         app:civ_border_color="@color/colorGrey"
         app:civ_circle_background_color="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="@+id/setting_header_bloc"

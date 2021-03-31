@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="app_margin">16dp</dimen>
     <dimen name="normalText">16sp</dimen>
-    <dimen name="vertical_margin">10dp</dimen>
+    <dimen name="app_small_margin">10dp</dimen>
     <dimen name="smallText">14sp</dimen>
     <dimen name="vertical_large_margin">16dp</dimen>
     <!--setting fragment-->
@@ -17,6 +17,10 @@
     <dimen name="settings_user_photo_border">2dp</dimen>
     <dimen name="settings_ripple_effect_riple">4dp</dimen>
     <dimen name="appPadding">5dp</dimen>
+
+    <!--Toolbar-->
+    <dimen name="toolbar_image_height">45dp</dimen>
+    <dimen name="toolbar_image_widgh">45dp</dimen>
 
 
     <!---->
