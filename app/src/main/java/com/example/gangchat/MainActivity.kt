@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import com.example.gangchat.activites.RegisterActivity
 import com.example.gangchat.databinding.ActivityMainBinding
-import com.example.gangchat.ui.fragments.ChatsFragment
+import com.example.gangchat.ui.fragments.MainFragment
+import com.example.gangchat.ui.fragments.register.EnterPhoneNumberFragment
 import com.example.gangchat.ui.objects.AppDrawer
 import com.example.gangchat.utilits.*
 import kotlinx.coroutines.CoroutineScope
@@ -35,13 +35,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun initFunc() {
+
+        setSupportActionBar(mToolbar)
         if (AUTH.currentUser != null) {
-            setSupportActionBar(mToolbar)
             mAppDrawer.create()
-            replaceFragment(ChatsFragment(), addStack = false)
+            replaceFragment(MainFragment(), addStack = false)
 
         } else {
-            replaceActivity(RegisterActivity())
+            replaceFragment(EnterPhoneNumberFragment(), false)
         }
     }
     private fun initFields() {

@@ -1,13 +1,8 @@
-package com.example.gangchat.ui.fragments
+package com.example.gangchat.ui.fragments.register
 
 import androidx.fragment.app.Fragment
-import com.example.gangchat.MainActivity
 import com.example.gangchat.R
-import com.example.gangchat.activites.RegisterActivity
-import com.example.gangchat.utilits.AUTH
-import com.example.gangchat.utilits.replaceActivity
-import com.example.gangchat.utilits.replaceFragment
-import com.example.gangchat.utilits.showToast
+import com.example.gangchat.utilits.*
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -29,7 +24,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
                 AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
                     if (task.isSuccessful){
                         showToast("Добро пожаловать")
-                        (activity as RegisterActivity).replaceActivity(MainActivity())
+                        restartActivity()
                     } else showToast(task.exception?.message.toString())
                 }
             }
@@ -59,7 +54,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
         PhoneAuthProvider.verifyPhoneNumber(
             PhoneAuthOptions
                 .newBuilder(FirebaseAuth.getInstance())
-                .setActivity(activity as RegisterActivity)
+                .setActivity(APP_ACTIVITY)
                 .setPhoneNumber(mPhoneNumber)
                 .setTimeout(60L, TimeUnit.SECONDS)
                 .setCallbacks(mCallback)
